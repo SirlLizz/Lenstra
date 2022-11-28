@@ -1,16 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import random
+from math import gcd
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def lenstra(n):
+    g = n
+    while g == n & g > 1:
+        x, y, a = random.randint(0, n - 1)
+        b = (y ^ 2 - x ^ 3 - a * x) % n
+        g = gcd(n, 4 * a ^ 3 + 27 * b ^ 2)
+    B = random.randint(1, n - 1)
+    P = [x, y]
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    lenstra(455839)
